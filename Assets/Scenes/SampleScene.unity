@@ -3276,7 +3276,7 @@ MonoBehaviour:
     m_camPosOffset: {x: 0, y: 0.75, z: 0}
     m_mouseSensitivity: 200
     m_mouseScrollSensitivity: 10
-    m_minVerticalAngle: -10
+    m_minVerticalAngle: -20
     m_maxVerticalAngle: 30
     m_minZoomDistance: 2
     m_maxZoomDistance: 30
