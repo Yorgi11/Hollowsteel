@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GameManager : Singleton_template<GameManager>
 {

@@ -110,17 +110,13 @@ public class Character : MonoBehaviour
     }
     private float GetIdleAnimationDuration(int idle)
     {
-        switch (idle)
+        return idle switch
         {
-            case 0:
-                return 2.533f; // Duration of Idle0
-            case 1:
-                return 3.667f; // Duration of Idle1
-            case 2:
-                return 7.533f; // Duration of Idle2
-            default:
-                return 2.533f; // Default to Idle0 duration if something goes wrong
-        }
+            0 => 2.533f,// Duration of Idle0
+            1 => 3.667f,// Duration of Idle1
+            2 => 7.533f,// Duration of Idle2
+            _ => 2.533f,// Default to Idle0 duration if something goes wrong
+        };
     }
     private IEnumerator RunAttack(Attack a, int i, bool isPlayer)
     {
@@ -224,7 +220,7 @@ public class Attack
     }
     public IEnumerator Reset()
     {
-        yield return new WaitForSeconds(m_resetTime);
+        yield return new WaitForSeconds(m_clip.length);
         m_currentUses = 0;
     }
 }
