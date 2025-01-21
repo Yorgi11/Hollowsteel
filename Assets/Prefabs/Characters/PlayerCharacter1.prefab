@@ -195,9 +195,8 @@ MonoBehaviour:
     m_VFX: {fileID: 0}
     m_clip: {fileID: -203655887218126122, guid: d0c683e0d61ba1a4f80e29cfe4984b12, type: 3}
     m_attackSounds:
-    - {fileID: 8300000, guid: 748a207786764af46bbdd4f99dc95c2b, type: 3}
-    m_attackHitSounds:
-    - {fileID: 8300000, guid: f0a26f5dde8e0dd44a7714d2abf6f191, type: 3}
+    - {fileID: 8300000, guid: 418df7485ce4e434d80474f3d8e880df, type: 3}
+    m_attackHitSounds: []
   - m_damage: 30
     m_speedMulti: 1
     m_resetTime: 1
@@ -209,9 +208,8 @@ MonoBehaviour:
     m_VFX: {fileID: 0}
     m_clip: {fileID: -203655887218126122, guid: 4b0b0686148fb8c42b5247e6742ad38b, type: 3}
     m_attackSounds:
-    - {fileID: 8300000, guid: 748a207786764af46bbdd4f99dc95c2b, type: 3}
-    m_attackHitSounds:
-    - {fileID: 8300000, guid: 39588ecbe6ba8e443a0acc5a28ac0275, type: 3}
+    - {fileID: 8300000, guid: 418df7485ce4e434d80474f3d8e880df, type: 3}
+    m_attackHitSounds: []
   - m_damage: 30
     m_speedMulti: 1
     m_resetTime: 1
@@ -223,9 +221,22 @@ MonoBehaviour:
     m_VFX: {fileID: 0}
     m_clip: {fileID: -203655887218126122, guid: 45e7112202b3d92458393b9bad36bc78, type: 3}
     m_attackSounds:
-    - {fileID: 8300000, guid: 748a207786764af46bbdd4f99dc95c2b, type: 3}
+    - {fileID: 8300000, guid: 418df7485ce4e434d80474f3d8e880df, type: 3}
+    m_attackHitSounds: []
+  - m_damage: 15
+    m_speedMulti: 1
+    m_resetTime: 0
+    m_maxUses: 6
+    m_currentUses: 0
+    m_moveVFX: 1
+    m_timeOffset: 1.5
+    m_vfxOffset: {x: 0, y: 1, z: 0}
+    m_VFX: {fileID: 7022875451347384031, guid: ac406ab16f138a04b856624cbb0c7676, type: 3}
+    m_clip: {fileID: -203655887218126122, guid: 45e7112202b3d92458393b9bad36bc78, type: 3}
+    m_attackSounds:
+    - {fileID: 8300000, guid: 57f8ba084848bf243a85416a87b9871e, type: 3}
     m_attackHitSounds:
-    - {fileID: 8300000, guid: 39588ecbe6ba8e443a0acc5a28ac0275, type: 3}
+    - {fileID: 8300000, guid: 33eb040f98ff05645b7e98680895b306, type: 3}
   m_ArenaSprite: {fileID: 0}
   m_enemyLayers:
     serializedVersion: 2

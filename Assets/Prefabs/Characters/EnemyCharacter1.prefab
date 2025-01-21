@@ -2901,7 +2901,7 @@ MonoBehaviour:
     m_VFX: {fileID: 0}
     m_clip: {fileID: -203655887218126122, guid: d0c683e0d61ba1a4f80e29cfe4984b12, type: 3}
     m_attackSounds:
-    - {fileID: 8300000, guid: 39588ecbe6ba8e443a0acc5a28ac0275, type: 3}
+    - {fileID: 8300000, guid: 418df7485ce4e434d80474f3d8e880df, type: 3}
     m_attackHitSounds:
     - {fileID: 8300000, guid: 39588ecbe6ba8e443a0acc5a28ac0275, type: 3}
   m_ArenaSprite: {fileID: 0}
