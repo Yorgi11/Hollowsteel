@@ -7,9 +7,12 @@ using MGUtilities;
 public class Character : MonoBehaviour
 {
     [SerializeField] private float m_maxHp;
-    [SerializeField] private float m_speed;
+    [SerializeField] private float m_runDist;
+    [SerializeField] private float m_walkSpeed;
+    [SerializeField] private float m_runSpeed;
     [SerializeField] private float m_resistance;
     [SerializeField] private AudioSource m_source;
+    private float m_currentSpeed;
 
     public List<Attack> m_attacks = new();
 
@@ -35,7 +38,7 @@ public class Character : MonoBehaviour
         }
     }
     public float Health { get { return m_currentHp; } set { m_currentHp -= value; } }
-    public float Speed { get { return m_speed; } }
+    public float Speed { get { return m_currentSpeed; } }
     public float Resistance { get { return m_resistance; } }
     void Start()
     {
@@ -43,8 +46,9 @@ public class Character : MonoBehaviour
         m_agent = GetComponent<NavMeshAgent>();
         m_animator = GetComponent<Animator>();
 
-        m_agent.speed = m_speed;
-        m_agent.acceleration = m_speed;
+        m_agent.speed = m_walkSpeed;
+        m_agent.acceleration = m_walkSpeed;
+        m_currentSpeed = m_walkSpeed;
 
         m_currentHp = m_maxHp;
 
@@ -52,6 +56,10 @@ public class Character : MonoBehaviour
     }
     public void SetAgentTarget(Vector3 pos)
     {
+        if (Vector3.Distance(pos, transform.position) > m_runDist) m_currentSpeed = m_runSpeed;
+        else m_currentSpeed = m_walkSpeed;
+        m_agent.speed = m_currentSpeed;
+        m_agent.acceleration = m_currentSpeed;
         m_agent.SetDestination(pos);
     }
     public void WarpAgentPosition(Vector3 pos)
@@ -66,14 +74,16 @@ public class Character : MonoBehaviour
     void Update()
     {
         m_vel = m_agent.velocity.magnitude;
-        if (m_vel > 0.025f)
+        if (m_vel > 0.1f)
         {
             m_animator.SetBool("IsMoving", true);
-            if (m_vel > 0.5f * m_speed) m_animator.SetFloat("Speed", 2f);
-            else if (m_vel <= 0.5f * m_speed) m_animator.SetFloat("Speed", 1f);
-            else m_animator.SetFloat("Speed", 0f);
+            m_animator.SetFloat("Speed", m_currentSpeed == m_walkSpeed ? 1f : 2f);
         }
-        else m_animator.SetBool("IsMoving", false);
+        else
+        {
+            m_animator.SetBool("IsMoving", false);
+            m_animator.SetFloat("Speed", 0f);
+        }
         //float v = Mathf.Lerp(m_animator.GetFloat("Z"), m_vel, 10f * Time.deltaTime);
         //m_animator.SetFloat("Z", v);
     }
