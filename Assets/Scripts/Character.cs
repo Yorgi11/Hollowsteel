@@ -84,8 +84,6 @@ public class Character : MonoBehaviour
             m_animator.SetBool("IsMoving", false);
             m_animator.SetFloat("Speed", 0f);
         }
-        //float v = Mathf.Lerp(m_animator.GetFloat("Z"), m_vel, 10f * Time.deltaTime);
-        //m_animator.SetFloat("Z", v);
     }
     private IEnumerator RandomizeIdle()
     {
