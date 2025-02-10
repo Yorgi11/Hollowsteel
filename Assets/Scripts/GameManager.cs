@@ -19,6 +19,11 @@ public class GameManager : Singleton_template<GameManager>
     [SerializeField] private GameObject m_combatMenu;
     [SerializeField] private GameObject m_buttonsParent;
     [SerializeField] private Arena m_currentArena;
+    //New Code
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip clip1;
+    [SerializeField] private AudioClip clip2;
+    //New Code
 
     //[SerializeField] private string m_saveData = "";
     [Space]
@@ -108,12 +113,19 @@ public class GameManager : Singleton_template<GameManager>
         m_currentPlayerState = PlayerState.Select;
         //m_currentEnemyIndex = m_enemyList.IndexOf(e);
         m_turnsDisplay.SetActive(true);
+        //Evan Code
+        source.clip = clip1;
+        source.Play();
+        //Evan Code
         ArenaInit(m_currentArena, e);
     }
     public void ExitArena()
     {
         m_turnsDisplay.SetActive(false);
         m_currentArena.gameObject.SetActive(true);
+        //Evan Code
+        source.clip = clip2;
+        source.Play();
     }
     public void ToggleMenu(GameObject menuToToggle)
     {
