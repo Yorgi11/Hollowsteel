@@ -22,7 +22,7 @@ public class Compass : MonoBehaviour
     }
     void Update()
     {
-        UpdateRotation(m_main, m_speed, Quaternion.LookRotation(Vector3.ProjectOnPlane(m_camPivot.forward, Vector3.up)));
+        UpdateRotation(m_main, m_speed, Quaternion.Euler(0f, -m_camPivot.rotation.eulerAngles.y, 0f));
         for (int i = 0; i < m_mainTransforms.Length; i++)
         {
             UpdateRotation(m_mainTransforms[i], m_mainSpeed, Quaternion.LookRotation(Vector3.up, Vector3.forward));
