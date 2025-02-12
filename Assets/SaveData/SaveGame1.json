@@ -1,7 +1,11 @@
 {
     "m_playerPos": {
         "x": 0.0,
+<<<<<<< Updated upstream
         "y": -6.097804069519043,
+=======
+        "y": -6.120186805725098,
+>>>>>>> Stashed changes
         "z": 0.0
     },
     "m_characters": [
