@@ -2888,7 +2888,7 @@ MonoBehaviour:
   m_maxHp: 100
   m_runDist: 10
   m_walkSpeed: 3
-  m_runSpeed: 7
+  m_runSpeed: 6
   m_resistance: 0
   m_source: {fileID: 3990367828104476245}
   m_attacks:
